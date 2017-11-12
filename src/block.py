@@ -13,13 +13,6 @@ class Block:
     def create_genesis_block():
         return Block("0", "0", datetime.datetime.now())
 
-    def create_next_block(self, previous_block):
-        prev_block_hash = previous_block.hash
-        data = ""
-        timestamp = datetime.datetime.now()
-
-        return Block(prev_block_hash, data, timestamp)
-
     def get_hash(self):
         header_bin = (str(self.previous_block_hash) +
                       str(self.data) +
